@@ -8,8 +8,7 @@ const Navbar = () => {
                 <li><a href="#home" className={linkStyle}>Home</a></li>
                 <li><a href="#about" className={linkStyle}>About Us</a></li>
                 <li><a href="#menu" className={linkStyle}>Menu</a></li>
-                <li><a href="#team" className={linkStyle}>Team</a></li>
-                <li><a href="#blog" className={linkStyle}>Blog</a></li>
+                <li><a href="#footer" className={linkStyle}>Contact Us</a></li>
             </ul>
 
             <div className="flex items-center">
