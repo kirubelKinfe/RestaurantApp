@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
 
 import '@styles/globals.css'
-import { Navbar } from '@components'
+import CartProvider from '@components/Providers'
+import CartModal from '@components/CartModal'
 
 
 export const metadata: Metadata = {
@@ -18,7 +19,10 @@ export default function RootLayout({
     <html lang="en">
       <body>
         <main>
-          {children}
+          <CartProvider>
+            <CartModal />
+            {children}
+          </CartProvider>
         </main>
       </body>
     </html>

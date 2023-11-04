@@ -39,6 +39,11 @@ const schema =  {
             validation: (Rule: any) => Rule.required(),
         },
         {
+            name: 'price_id',
+            type: 'string',
+            title: 'Stripe Price ID'
+        },
+        {
             name: 'category',
             type: 'string',
             title: 'Category',

@@ -8,7 +8,8 @@ export type FoodType = {
     image: string,
     category: string,
     ingredients: string,
-    price: number
+    price: number,
+    price_id: string
 }
 
 export const revalidate = 900;
@@ -21,8 +22,6 @@ const Menu = async () => {
         page: '1'
     })
 
-    console.log(foods)
-
     return (
         <section className="mt-28 px-20" id="menu">
 
@@ -32,7 +31,13 @@ const Menu = async () => {
             </div>
 
             <div className="mt-5">
-                <p className="text-[#7dd87d] mb-5 text-4xl font-bold">Starters</p>
+                <p className="text-[#7dd87d] mb-5 text-4xl font-bold">STARTERS</p>
+                <div className="grid grid-cols-4 gap-5">
+                    {foods?.map((food: FoodType) => (
+                        <Food key={food._id} food={food} />
+                    ))}
+                </div>
+                <p className="mt-20 text-[#7dd87d] mb-5 text-4xl font-bold">BEEF SPECIALITIES</p>
                 <div className="grid grid-cols-4 gap-5">
                     {foods?.map((food: FoodType) => (
                         <Food key={food._id} food={food} />

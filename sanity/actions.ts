@@ -25,7 +25,8 @@ export const getFoods =  async (params: GetFoodListParams) => {
             ingredients,
             slug,
             price,
-            category
+            category,
+            price_id
           }`
         );
     

@@ -3,7 +3,7 @@ import Logo from '@public/assets/images/kitfo-610x407.jpg'
 
 const Header = () => {
     return (
-        <header className="h-[80vh] mt-[80px] w-full relative grid grid-cols-2 items-center gap-12 bg-[#130849] px-20" id="home">
+        <header className="h-[80vh] mt-20 w-full relative grid grid-cols-2 items-center gap-12 bg-[#130849] px-20" id="home">
             <div className="col-span-1">
                 <h1 className="text-[#7dd87d] text-3xl font-bold">Welcome</h1>
                 <h3 className="mt-5 text-white text-7xl py-7">Enjoy Ethiopian Food</h3>

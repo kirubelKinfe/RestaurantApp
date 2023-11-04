@@ -1,4 +1,4 @@
-import { Header, About, Menu, Footer, Navbar } from "@components"
+import { Header, About, Menu, Footer, Navbar } from "@components/index"
 
 const Home = () => {
   return (
