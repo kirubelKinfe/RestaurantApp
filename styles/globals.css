@@ -69,8 +69,26 @@
 @layer base {
   * {
     @apply border-border;
+    scroll-behavior: smooth
   }
   body {
     @apply bg-background text-foreground;
+  }
+
+  ::-webkit-scrollbar {
+    width: 7px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background-color: white;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #0e114f;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-slider-thumb:hover {
+    background-color: #082f6d;
   }
 }

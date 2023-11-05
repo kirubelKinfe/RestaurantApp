@@ -8,11 +8,13 @@ import {
 } from "@/components/ui/sheet";
 
 import Image from "next/image";
+import { useState } from "react";
 import { useShoppingCart } from "use-shopping-cart";
 
 export default function CartModal() {
     const {
         cartCount,
+        setItemQuantity,
         shouldDisplayCart,
         handleCartClick,
         cartDetails,
@@ -20,18 +22,24 @@ export default function CartModal() {
         totalPrice,
         redirectToCheckout,
     } = useShoppingCart();
+    const [isPending, setIsPending] = useState(false)
 
     async function handleCheckoutClick(event: any) {
         event.preventDefault();
+        setIsPending(true)
         try {
             const result = await redirectToCheckout();
+
             if (result?.error) {
                 console.log("result");
             }
+            setIsPending(false)
         } catch (error) {
             console.log(error);
+            setIsPending(false)
         }
     }
+    console.log(cartDetails)
     return (
         <Sheet open={shouldDisplayCart} onOpenChange={() => handleCartClick()}>
             <SheetContent className="sm:max-w-lg w-[90vw]">
@@ -48,34 +56,43 @@ export default function CartModal() {
                                 <>
                                     {Object.values(cartDetails ?? {}).map((entry) => (
                                         <li key={entry.id} className="flex py-6">
-                                            <div className="h-24 w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
+                                            <div className="h-20 w-20 sm:h-24 sm:w-24 flex-shrink-0 overflow-hidden rounded-md border border-gray-200">
                                                 <Image
                                                     src={entry.image as string}
                                                     alt="Product image"
-                                                    width={100}
-                                                    height={100}
+                                                    className="w-[80px] h-[80px] sm:w-[100px] sm:h-[100px] object-cover"
+                                                    width={80}
+                                                    height={80}
+
                                                 />
                                             </div>
 
-                                            <div className="ml-4 flex flex-1 flex-col">
+                                            <div className="ml-4 flex flex-1 flex-col px-2">
                                                 <div>
-                                                    <div className="flex justify-between text-base font-medium text-gray-900">
+                                                    <div className="flex justify-between text-sm sm:text-base font-medium text-gray-900">
                                                         <h3>{entry.name}</h3>
-                                                        <p className="ml-4">${entry.price}</p>
+                                                        <p className="ml-4 font-bold text-red-500">${entry.price}</p>
                                                     </div>
-                                                    <p className="mt-1 text-sm text-gray-500 line-clamp-2">
-                                                        {entry.description}
+                                                    <p className="mt-1 text-xs sm:text-sm text-gray-500 line-clamp-2">
+                                                        {entry.ingredients}
                                                     </p>
                                                 </div>
 
-                                                <div className="flex flex-1 items-end justify-between text-sm">
-                                                    <p className="text-gray-500">QTY: {entry.quantity}</p>
+                                                <div className="flex flex-1 items-end justify-between text-sm ">
+                                                    <div className="flex items-center gap-2">
+                                                        <p className="text-gray-500">QTY: </p>
+                                                        <input
+                                                            className="border border-gray-700 self-start w-16  focus:outline-none  rounded-md p-1 h-6" value={entry.quantity}
+                                                            onChange={(e) => setItemQuantity(entry.id, parseInt(e.target.value))}
+                                                            type="number"
+                                                        />
+                                                    </div>
 
                                                     <div className="flex">
                                                         <button
                                                             type="button"
                                                             onClick={() => removeItem(entry.id)}
-                                                            className="font-medium text-primary hover:text-primary/80"
+                                                            className="font-medium text-[#130849] hover:text-[#130849]/80"
                                                         >
                                                             Remove
                                                         </button>
@@ -92,15 +109,19 @@ export default function CartModal() {
                     <div className="border-t border-gray-200 px-4 py-6 sm:px-6">
                         <div className="flex justify-between text-base font-medium text-gray-900">
                             <p>Subtotal:</p>
-                            <p>${totalPrice}</p>
+                            <p className="font-bold text-red-500">${totalPrice}</p>
                         </div>
                         <p className="mt-0.5 text-sm text-gray-500">
                             Shipping and taxes are calculated at checkout.
                         </p>
 
                         <div className="mt-6">
-                            <Button onClick={handleCheckoutClick} className="w-full">
-                                Checkout
+                            <Button
+                                onClick={handleCheckoutClick}
+                                className="w-full"
+                                disabled={isPending ? true : false}
+                            >
+                                {isPending ? "Loading..." : "Checkout"}
                             </Button>
                         </div>
 

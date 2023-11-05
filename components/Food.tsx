@@ -16,7 +16,7 @@ const Food = ({ food }: FoodProps) => {
         <div onClick={() => setIsOpen(true)} className="col-span-1 flex flex-col items-center py-4 px-4 shadow-lg transition rounded-3xl transform cursor-pointer hover:scale-105 hover:shadow-2xl hover:-translate-y-2">
             <Image
                 src={food.image}
-                className="w-[200px] h-[140px] rounded-[40px]"
+                className="w-[200px] h-[140px] rounded-[40px] object-cover"
                 width={300}
                 height={300}
                 alt="food"
