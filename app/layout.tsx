@@ -6,8 +6,8 @@ import CartModal from '@components/CartModal'
 
 
 export const metadata: Metadata = {
-  title: 'Restaurant',
-  description: 'Best Ethiopian Food.',
+  title: 'Mulu Ethiopian Restaurant',
+  description: 'Ethiopian restaurant of Malden ,MA favorite for both vegans & meat lovers with its authentic Ethiopian food all are food are prepared fresh vegetables and fresh meat.the frendliy staff and warm decor makes Ethiopian restaurant the perfect place to relax with family and friends.',
 }
 
 export default function RootLayout({

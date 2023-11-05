@@ -5,7 +5,7 @@ const About = () => {
         <section className="grid w-full px-5 sm:px-10 lg:px-20 grid-cols-1 sm:grid-cols-2 pt-16 sm:pt-28 justify-center items-center gap-12" id="about">
             <div className="col-span-1 w-full flex items-center justify-center">
                 <Image
-                    src={"/images/Kitfo-and-Tibs.jpg"}
+                    src={"/images/restaurant2.jpg"}
                     className="w-[360px] h-[410px] lg:w-[480px] lg:h-[530px] rounded-lg shadow-lg object-cover"
                     width={480}
                     height={530}

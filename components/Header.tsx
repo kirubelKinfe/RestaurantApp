@@ -12,7 +12,7 @@ const Header = () => {
 
             <div className="col-span-1 hidden sm:block">
                 <Image
-                    src='/images/kitfo.jpg'
+                    src='/images/EthiopianFood.jpg'
                     className="w-[600px] h-[350px] rounded-3xl bg-gray-300 object-cover"
                     width={600}
                     height={350}

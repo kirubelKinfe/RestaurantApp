@@ -132,7 +132,7 @@ export default function CartModal() {
                                     onClick={() => handleCartClick()}
                                     className=" font-medium text-primary hover:text-primary/80"
                                 >
-                                    Continue Shopping
+                                    Continue Selection
                                 </button>
                             </p>
                         </div>

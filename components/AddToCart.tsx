@@ -54,7 +54,7 @@ export default function AddToCart({
             <Button
                 onClick={handleAddToCartClick}
             >
-                Add To Cart
+                Add To Cart-${price}
             </Button>
         </form>
     );
