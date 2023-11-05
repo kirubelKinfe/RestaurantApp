@@ -9,8 +9,8 @@ export default function CartProvider({ children }: { children: ReactNode }) {
             mode="payment"
             cartMode="client-only"
             stripe={process.env.NEXT_PUBLIC_STRIPE_KEY as string}
-            successUrl="https://restaurant-habesha.vercel.app/stripe/success"
-            cancelUrl="https://restaurant-habesha.vercel.app/stripe/error"
+            successUrl="https://restaurant-ethiopian-restaurant.vercel.app/stripe/success"
+            cancelUrl="https://restaurant-ethiopian-restaurant.vercel.app/stripe/error"
             currency="USD"
             billingAddressCollection={false}
             shouldPersist={true}
