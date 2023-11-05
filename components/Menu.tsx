@@ -27,7 +27,7 @@ const Menu = async () => {
         category: 'beef specialities',
         page: '1'
     })
-
+    console.log(beefSpecialities)
     return (
         <section className="mt-28 px-5 sm:px-10 lg:px-20" id="menu">
 
