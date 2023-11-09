@@ -16,7 +16,7 @@ const Navbar = () => {
         <nav className="fixed bg-white z-50 right-0 top-0 left-0 flex items-center justify-between px-5 sm:px-10 h-20 w-full shadow-md">
             <div className='flex items-center gap-3'>
                 <Menu className='text-[#130849] block md:hidden' onClick={() => setMenuOpen(true)} />
-                <a href="/" className="text-lg md:text-xl lg:text-3xl text-[#7dd87d] font-bold">Mulu <span className="text-[#130849]">Ethiopian</span> Restaurant</a>
+                <a href="/" className="text-lg md:text-xl lg:text-3xl text-[#7dd87d] font-bold">Chef <span className="text-[#130849]">Habesha</span></a>
             </div>
 
             <ul className="items-center justify-between hidden md:flex">
