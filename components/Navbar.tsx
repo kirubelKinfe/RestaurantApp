@@ -21,9 +21,9 @@ const Navbar = () => {
 
             <ul className="items-center justify-between hidden md:flex">
                 <li><a href="#home" className={linkStyle}>Home</a></li>
-                <li><a href="#about" className={linkStyle}>About Us</a></li>
+                <li><a href="#about" className={linkStyle}>About</a></li>
                 <li><a href="#menu" className={linkStyle}>Menu</a></li>
-                <li><a href="#footer" className={linkStyle}>Contact Us</a></li>
+                <li><a href="#footer" className={linkStyle}>Contact</a></li>
             </ul>
 
             <div className="flex divide-x border-r sm:border-l">
