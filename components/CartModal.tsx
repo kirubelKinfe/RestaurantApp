@@ -82,6 +82,7 @@ export default function CartModal() {
                                                     <div className="flex items-center gap-2">
                                                         <p className="text-gray-500">QTY: </p>
                                                         <input
+                                                            autoFocus={false}
                                                             className="border border-gray-700 self-start w-16  focus:outline-none  rounded-md p-1 h-6" value={entry.quantity}
                                                             onChange={(e) => setItemQuantity(entry.id, parseInt(e.target.value))}
                                                             type="number"

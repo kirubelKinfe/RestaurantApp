@@ -6,17 +6,17 @@ import { Button } from './ui/button'
 import SideNav from './SideNav'
 import { useState } from 'react'
 
-const linkStyle = "text-sm lg:text-base text-[#130849] py-2 px-4 md:px-7 font-bold transition hover:text-[#7dd87d]"
+const linkStyle = "text-sm lg:text-base text-[#130849] py-2 px-4 font-bold transition hover:text-blue-500"
 
 const Navbar = () => {
     const { handleCartClick } = useShoppingCart()
     const [menuOpen, setMenuOpen] = useState(false)
 
     return (
-        <nav className="fixed bg-white z-50 right-0 top-0 left-0 flex items-center justify-between px-5 sm:px-10 h-20 w-full shadow-md">
+        <nav className="fixed bg-white z-50 right-0 top-0 left-0 flex items-center justify-between px-5 sm:px-10 h-20 w-full shadow-sm">
             <div className='flex items-center gap-3'>
                 <Menu className='text-[#130849] block md:hidden' onClick={() => setMenuOpen(true)} />
-                <a href="/" className="text-lg md:text-xl lg:text-3xl text-[#7dd87d] font-bold">Chef <span className="text-[#130849]">Habesha</span></a>
+                <a href="/" className="text-lg md:text-xl lg:text-3xl text-blue-500 font-bold">Kitfo <span className="text-[#130849]">Habesha</span></a>
             </div>
 
             <ul className="items-center justify-between hidden md:flex">
