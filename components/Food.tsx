@@ -13,7 +13,7 @@ type FoodProps = {
 const Food = ({ food }: FoodProps) => {
     const [isOpen, setIsOpen] = useState(false)
     return (
-        <div onClick={() => setIsOpen(true)} className="bg-white col-span-1 flex flex-col items-center py-4 px-4 shadow-full transition rounded-3xl transform cursor-pointer hover:scale-105 hover:shadow-2xl hover:-translate-y-2">
+        <div onClick={() => setIsOpen(true)} className="bg-white col-span-1 flex flex-col items-center py-4 px-4 shadow-md transition rounded-3xl transform cursor-pointer hover:scale-105 hover:shadow-2xl hover:-translate-y-2">
             <Image
                 src={food.image}
                 className="w-[200px] h-[140px] rounded-[40px] object-cover"
